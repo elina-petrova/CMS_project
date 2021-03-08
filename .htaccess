@@ -1,0 +1,14 @@
+## Deny access
+<FilesMatch "\.?htaccess$>
+    deny from all
+</FilesMatch>
+
+
+## Redirect user
+
+## If you make a typo the whole website willbe down
+
+Redirect 301 /movies_cms/load.php /movies_cms
+Redirect 301 /movies_cms/templates/header.php /movies_cms
+Redirect 301 /movies_cms/templates/footer.php /movies_cms
+
