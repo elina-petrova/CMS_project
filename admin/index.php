@@ -1,3 +1,4 @@
+<!-- dashboard page -->
 
 <?php
 require_once '../load.php';
