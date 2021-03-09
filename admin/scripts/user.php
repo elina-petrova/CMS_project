@@ -19,15 +19,15 @@ function createUser($user_data)
             ':pass'=>$user_data['password_encrypt'],
             ':email'=>$user_data['email'],
         )
-        );
+    );
     // 2. redirect to index.html if create user successfully (maybe with some messages???)
     // otherwise show error message
 
-    if($create_user_result){
+    if ($create_user_result) {
         $mailSent = sendMail($user_data);
-        if ($mailSent){
+        if (!$mailSent) {
             $_SESSION['message'] = sprintf('New user %s has been created. Check your email to get the password. Thank you!', $user_data['username']);
-            redirect_to('index.php');   
+            redirect_to('index.php');
         } else {
             return 'Mail was not sent';
         }
