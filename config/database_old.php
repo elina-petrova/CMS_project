@@ -1,19 +1,23 @@
 <?php
-class Database
+class Database_Old
 {
-    // database credentials
-    private $host = "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $db_name = "c4pmxhczh6wzxpgq";
-    private $username = "ug5fh4ctpr19iov7";
-    private $password = "r7ygzj50w9c7xwko";
+    // Note: specify your own database credentials
+    private $host = "localhost";
 
-    # 1.
-    private static $instance = null;
+    private $db_name = "db_movies_cms";
+
+    private $username = "root";
+
+    private $password = "";
+
     public $conn;
 
-    # 2. Add a new function __construct
-    private function __construct()
+    // get the database connection
+    public function getConnection()
     {
+
+        $this->conn = null;
+
         $db_dsn = array(
             'host'    => $this->host,
             'dbname'  => $this->db_name,
@@ -38,23 +42,7 @@ class Database
             );
             exit;
         }
-    }
 
-    # 3. Anither getInstance function
-    // get a new self unsance if does not exist
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new Database();
-        }
-
-        return self::$instance;
-    }
-
-    // get the database connection
-    # 4.
-    public function getConnection()
-    {
         return $this->conn;
     }
 }

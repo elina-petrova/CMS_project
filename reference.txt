@@ -1,9 +1,13 @@
+Redirect and pass data:
+https://stackoverflow.com/questions/9321071/php-pass-data-with-redirect
 
-PHP date and time:
-https://www.w3schools.com/php/php_date.asp
-https://stackoverflow.com/questions/470617/how-do-i-get-the-current-date-and-time-in-php
+Random password generation:
+https://www.php.net/manual/en/function.random-int.php
+https://www.formget.com/php-password-generator/
+https://stackoverflow.com/questions/6101956/generating-a-random-password-in-php
 
-PHP account lockout:
-https://www.youtube.com/watch?v=_H6gd7vawO0
+Password encryption:
+https://stackoverflow.com/questions/2235158/sha1-vs-md5-vs-sha256-which-to-use-for-a-php-login
+https://stackoverflow.com/questions/4795385/how-do-you-use-bcrypt-for-hashing-passwords-in-php
 
 

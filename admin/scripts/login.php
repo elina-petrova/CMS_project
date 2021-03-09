@@ -14,8 +14,8 @@ function login($username, $password, $ip)
         $_SESSION['user_count'] = $found_user['user_count'];
 
         // check if password is matched and if user-count is not blocked
-        if($found_user['user_pass']==$password && $_SESSION['user_count'] != 3 ){
-
+        $isPasswordMatched = verifyPassword($password, $found_user['user_pass']);
+        if($isPasswordMatched && $_SESSION['user_count'] != 3 ){
             // indicate that user has been logged in 
             // for confirm_logged_in() function
             $_SESSION['user_id'] = $found_user_id;
@@ -71,6 +71,5 @@ function confirm_ligged_in()
 
 function logout(){
     session_destroy();
-
     redirect_to('admin_login.php');
 }

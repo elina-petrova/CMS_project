@@ -14,12 +14,16 @@ $login_attempts = 0;
 if(isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
+    // $password_not = trim($_POST['password']);
+    // $password = sha1($password_not);
+
 
     $user_name_value = $username;
     
     if (!empty($username) && !empty($password)){
         $result = login($username, $password, $ip);
         $message = $result;
+        $login_attempts = $_SESSION['user_count'];
     } else {
         $message = 'Please fill out required fields';
     }
